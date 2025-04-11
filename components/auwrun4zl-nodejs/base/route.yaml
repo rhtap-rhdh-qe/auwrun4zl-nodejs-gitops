@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: auwrun4zl-nodejs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: auwrun4zl-nodejs 
+  name: auwrun4zl-nodejs
+spec:
+  port:
+    targetPort: 3001 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: auwrun4zl-nodejs
+    weight: 100 
